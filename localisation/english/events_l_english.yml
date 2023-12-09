@@ -1,0 +1,40 @@
+﻿l_english:
+ #FOR REFERENCE
+ MINIMIZE_EVENT:0 "§GClick§! to Minimize. Event will be placed in the Event Queue under §HEvents and Decisions§!."
+ germany.4.t:0 "Anschluss"
+ germany.4.d:0 "Repeated uprisings in Austria clearly show that the people there long to be united with our Reich. It is now time to take action and allow the will of the people to be made manifest."
+ germany.4.a:0 "How can anyone say that Austria is not German?!"
+
+ #SONTISIAN EMPIRE
+ SOE_princess_kiki.1.t:0 "The Princess takes control!"
+ SOE_princess_kiki.1.d:0 "With Princess Kiki as the sole heir to the throne of Sontisia, the Regency Council has decided that she should take over rule of our nation."
+ SOE_princess_kiki.1.a:0 "A daunting task to be sure"
+ SOE_coronation.1.t:0 "Long Live the Empress!"
+ SOE_coronation.1.d:0 "With the expedition declared missing and the Emperor and Prince presumed dead, the Sontisian Empire had no choice but to prepare princess to lead the nation. On this day Princess Kiki has been crowed Empress of Sontisia, Long Live Empress Kiki!"
+ SOE_coronation.1.a:0 "She will lead us to greatness!"
+ SOE_sontisia_kiki_grows.1.t:0 "Empress Kiki expands her borders, I mean waistline"
+ SOE_sontisia_kiki_grows.1.d:0 "Repeated visits from the royal chefs have shown considerable effects on the empress' figure. Should we tell her to stop?"
+ SOE_sontisia_kiki_grows.1.a:0 "Are you crazy? I'm sure she'll stop soon enough..."
+ SOE_sontisia_kiki_grows.2.t:0 "Empress Kiki outgrows more of the royal wardrobe"
+ SOE_sontisia_kiki_grows.2.d:0 "Empress Kiki just keeps on outgrowing her clothing, the tailors keep complaining of having to take new measurements every few days. She even ripped through a dress at a ball with the nobles of Sontisia! We have to put a stop to her eating habits!"
+ SOE_sontisia_kiki_grows.2.a:0 "I'm sure it's just stress eating, she'll get over it in no time!"
+ SOE_sontisia_kiki_grows.3.t:0 "Empress Kiki gets stuck in doorway"
+ SOE_sontisia_kiki_grows.3.d:0 ""Who in the world built the doorway's of this place so small..!? Get over here and push!" Said Empress Kiki as she strugged to make her way through a doorway to her dining room. Her appetite still hasn't ceased to be ravenous, we might not have much time to stop her before she gives in completely to it." 
+ SOE_sontisia_kiki_grows.3.a:0 "This is getting out of hand!"
+ SOE_sontisia_kiki_grows.4.t:0 "Empress Kiki demands 5 buffets a day"
+ SOE_sontisia_kiki_grows.4.d:0 ""Your Empress demands more buffets! I'm wasting away over here, hurry up!" Shouted the massive latias. Empress Kiki's appetite has grown out of control, giving into her gluttonous ways, easily eating enough food to sustain a small town in Sontisia, is it even possible to stop her now?"
+ SOE_sontisia_kiki_grows.4.a:0 "...Yes your majesty"
+
+ #GLOBAL NEWS EVENTS
+ news.1.t:0 "Expedition declared missing!"
+ news.1.d:0 "After 8 years, with no word back from the emperor's expedition out east, the expedition has been declared missing, with both the Emperor and prince presumed dead. What will this mean for the Sontisian Empire, and more importantly, Princess Kiki?"
+ news.1.a:1 "Send our condolences."
+ news.1.b:0 "An awful tragedy..."
+ news.1.c:0 "Perhaps this spells opportunity..."
+
+ news.2.t:0 "Princess Kiki Coronated!"
+ news.2.d:0 "With the expedtion declared missing and the Emperor and Prince presumed dead, the Sontisian Empire had no choice but to prepare princess to lead the nation. On this day, 33 years and 6 tons young, Princess Kiki has been crowed Empress of Sontisia, Long Live Empress Kiki!"
+ news.2.a:1 "...when did she get so massive?"
+ news.2.b:0 "Long Live Empress Kiki!"
+ news.2.c:0 "Who made the blimp in charge?"
+

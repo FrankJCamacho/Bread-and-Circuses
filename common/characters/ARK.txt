@@ -1,0 +1,25 @@
+characters = {
+	
+	#ABSOL PLACEHOLDER
+	ARK_absol = {
+		name = ARK_absol
+		gender = female
+
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ARK/absol_leader.dds"
+			}
+			
+			army = {
+				large = "gfx/leaders/ARK/absol_leader.dds"
+			}
+		}
+
+	country_leader = {
+            ideology = fascism_ideology
+            traits = {  }
+            desc = ""
+        }
+
+	}
+}

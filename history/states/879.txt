@@ -1,0 +1,43 @@
+
+state={
+	id=879
+	name="STATE_879"
+	manpower = 950000
+	state_category = city
+	resources={
+		aluminium=4
+		chromium=0
+		oil=0
+		rubber=0
+		steel=7
+		tungsten=0
+	}
+
+	history={
+		owner = SOE
+
+		victory_points = {
+			5589 20
+		}
+		buildings = {
+			infrastructure = 3
+			air_base = 0
+			arms_factory = 1
+			industrial_complex = 2
+			dockyard = 1
+			5589 = {
+				naval_base = 4
+
+			}
+
+		}
+		add_core_of = SOE
+
+	}
+
+	provinces={
+		2144 2842 2896 3777 5236 5589 6812 6964 7239 7292 7372 8852 9818 10142 10184 12036 12597 12954 13021 14528 14602 15567 15890 17048 
+	}
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

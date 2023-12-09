@@ -1,0 +1,38 @@
+
+state={
+	id=824
+	name="STATE_824"
+	manpower = 1000000
+	
+	state_category = large_city
+	resources={
+		aluminium=4
+		chromium=0
+		oil=0
+		rubber=0
+		steel=2
+		tungsten=0
+	}
+
+	history={
+		owner = WAT
+
+		victory_points = {
+			3817 50
+		}
+		buildings = {
+			infrastructure = 3
+			air_base = 4
+			arms_factory = 2
+			industrial_complex = 2
+			
+			
+		}
+		add_core_of = WAT
+	}
+
+	provinces={
+		1672 3436 3817 4347 5101 6304 7743 8114 8906 10884 12177 12878 13221 13571 14349 16816 18729 
+	}
+	local_supplies=0.0 
+}

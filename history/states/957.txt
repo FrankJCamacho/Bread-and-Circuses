@@ -1,0 +1,36 @@
+state={
+	id=957
+	name="STATE_957"
+	manpower=914000
+	state_category = city
+
+	resources={
+		aluminium=0.000
+		chromium=0.000
+		oil=0.000
+		rubber=0.000
+		steel=2.000
+		tungsten=0.000
+	}
+
+	history={
+		owner = SOE
+		victory_points = {
+			8765 20 
+		}
+		buildings = {
+			infrastructure = 4
+			air_base = 0
+			arms_factory = 1
+			industrial_complex = 2
+
+		}
+		add_core_of = SOE
+
+	}
+	provinces={
+		1247 1520 8012 8238 8765 12153 12652 13558 14859 15162 15831 16923 
+	}
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

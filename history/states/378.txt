@@ -1,0 +1,38 @@
+
+state={
+	id=378
+	name="STATE_378"
+	manpower = 965000
+	
+	state_category = city
+	resources={
+		aluminium=2
+		chromium=0
+		oil=0
+		rubber=0
+		steel=7
+		tungsten=0
+	}
+
+	history={
+		owner = SOE
+
+		victory_points = {
+			13058 20
+		}
+		buildings = {
+			infrastructure = 3
+			air_base = 0
+			arms_factory = 0
+			industrial_complex = 3
+			
+			
+		}
+		add_core_of = SOE
+	}
+
+	provinces={
+		458 1037 3093 3558 4119 4144 4440 4851 7197 9076 9953 10301 11522 12898 12942 13058 14086 14166 14271 14504 15936 16552 17082 
+	}
+	local_supplies=0.0 
+}

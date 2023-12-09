@@ -1,0 +1,183 @@
+﻿###########################
+# Sontisian Events
+###########################
+
+add_namespace = SOE_sontisia_kiki_grows
+add_namespace = SOE_coronation
+add_namespace = SOE_princess_kiki
+
+country_event = {
+	id = SOE_princess_kiki.1
+	title = SOE_princess_kiki.1.t
+	desc = SOE_princess_kiki.1.d
+	picture = GFX_report_event_african_soldiers #replace with new picture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = SOE_princess_kiki.1.a
+		
+		hidden_effect = {
+			kill_country_leader = yes
+		}
+		
+		create_country_leader = {
+			name = "Princess Kiki"
+			desc = ""
+			picture = "gfx/leaders/SOE/portrait_SOE_kiki.dds"
+			ideology = despotism
+			traits = {
+				
+			}
+		}
+	}
+	
+} 
+
+country_event = {
+	id = SOE_sontisia_kiki_grows.1
+	title = SOE_sontisia_kiki_grows.1.t
+	desc = SOE_sontisia_kiki_grows.1.d
+	picture = GFX_report_event_african_soldiers #replace with new picture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = SOE_sontisia_kiki_grows.1.a
+		
+		hidden_effect = {
+			kill_country_leader = yes
+		}
+		
+		create_country_leader = {
+			name = "Empress Kiki"
+			desc = ""
+			picture = "gfx/leaders/SOE/portrait_SOE_kiki_bigger1.dds"
+			ideology = despotism
+			traits = {
+				portly_princess
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = SOE_sontisia_kiki_grows.2
+	title = SOE_sontisia_kiki_grows.2.t
+	desc = SOE_sontisia_kiki_grows.2.d
+	picture = GFX_report_event_african_soldiers #replace with new picture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = SOE_sontisia_kiki_grows.2.a
+		
+		hidden_effect = {
+			kill_country_leader = yes
+		}
+		
+		create_country_leader = {
+			name = "Empress Kiki"
+			desc = ""
+			picture = "gfx/leaders/SOE/portrait_SOE_kiki_bigger2.dds"
+			ideology = despotism
+			traits = {
+				portly_princess
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = SOE_sontisia_kiki_grows.3
+	title = SOE_sontisia_kiki_grows.3.t
+	desc = SOE_sontisia_kiki_grows.3.d
+	picture = GFX_report_event_african_soldiers #replace with new picture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = SOE_sontisia_kiki_grows.3.a
+		
+		hidden_effect = {
+			kill_country_leader = yes
+		}
+		
+		create_country_leader = {
+			name = "Empress Kiki"
+			desc = ""
+			picture = "gfx/leaders/SOE/portrait_SOE_kiki_bigger3.dds"
+			ideology = despotism
+			traits = {
+				portly_princess
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = SOE_sontisia_kiki_grows.4
+	title = SOE_sontisia_kiki_grows.4.t
+	desc = SOE_sontisia_kiki_grows.4.d
+	picture = GFX_report_event_african_soldiers #replace with new picture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = SOE_sontisia_kiki_grows.4.a
+		
+		hidden_effect = {
+			kill_country_leader = yes
+		}
+		
+		create_country_leader = {
+			name = "Empress Kiki"
+			desc = ""
+			picture = "gfx/leaders/SOE/portrait_SOE_kiki_bigger4.dds"
+			ideology = despotism
+			traits = {
+				portly_princess
+			}
+		}
+	}
+	
+}
+
+#set_country_flag = my_flag_name (can be used to set a flag on a certain place, aka save some data for later)
+
+country_event = {
+    id = SOE_coronation.1
+	title = SOE_coronation.1.t
+	desc = SOE_coronation.1.d
+	picture = GFX_report_event_african_soldiers #replace with new picture
+	
+	#immediate = {
+       # set_country_flag = SOE_coronation_event  # Since set_country_flag has no tooltip, no need to hide it.
+   #}
+	
+	is_triggered_only = yes
+	option = {
+		name = SOE_coronation.1.a
+		
+		hidden_effect = {
+			kill_country_leader = yes
+		}
+		create_country_leader = {
+			name = "Empress Kiki"
+			desc = ""
+			picture = "gfx/leaders/SOE/portrait_SOE_kiki.dds"
+			ideology = despotism
+			traits = {
+				inexperienced_monarch
+			}
+		}
+	}
+}

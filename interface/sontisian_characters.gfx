@@ -1,0 +1,23 @@
+spriteTypes = {
+	### SOE
+
+	spriteType = {
+		name = "GFX_portrait_soe_nicky_mudkip_large"
+		texturefile = "gfx/leaders/SOE/portrait_nicky_mudkip.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_soe_nicky_mudkip_small"
+		texturefile = "gfx/characters/SOE/portrait_nicky_mudkip.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_soe_admiral_greninja_large"
+		texturefile = "gfx/leaders/SOE/portrait_admiral_greninja_large.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_soe_admiral_greninja_small"
+		texturefile = "gfx/characters/SOE/portrait_admiral_greninja.dds"
+	}
+}

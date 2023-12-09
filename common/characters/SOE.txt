@@ -1,0 +1,133 @@
+characters = {
+	
+	#EMPRESS KIKI
+	SOE_kiki = {
+		name = SOE_kiki
+		gender = female
+
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOE/portrait_SOE_kiki.dds"
+			}
+			
+			army = {
+				large = "gfx/leaders/SOE/portrait_SOE_kiki.dds"
+			}
+		}
+
+		country_leader = {
+            ideology = despotism
+            traits = {  }
+            desc = SOE_kiki_desc
+        }
+
+	
+	}
+	
+	SOE_regency_council = {
+		name = SOE_regency_council
+
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOE/portrait_SOE_regency.dds"
+			}
+			
+		}
+
+		country_leader = {
+            ideology = despotism
+            traits = { neutered_government }
+            desc = SOE_regency_council_desc
+        }
+
+	}
+	
+	SOE_nicky_mudkip = {
+		name = SOE_nicky_mudkip
+	
+		portraits = {	
+			army = {
+                large = "gfx/leaders/SOE/portrait_nicky_mudkip_large.dds"
+            }
+		}
+		
+		corps_commander = {
+            traits = { media_personality armor_officer war_hero winter_specialist }
+            skill = 5
+            attack_skill = 5
+            defense_skill = 2
+            planning_skill = 4
+            logistics_skill = 5
+            
+        }
+	
+	}
+	
+	SOE_admiral_greninja = {
+		name = SOE_admiral_greninja
+	
+		portraits = {	
+			navy = {
+                small = "gfx/characters/SOE/portrait_SOE_admiral_greninja.dds"
+            }
+			army = {
+                large = "gfx/leaders/SOE/portrait_SOE_admiral_greninja_large.dds"
+            }
+		}
+		
+		advisor={
+			slot = navy_chief
+			idea_token = SOE_admiral_greninja
+			ledger = navy
+			allowed  = {
+				original_tag  = SOE
+			}
+					
+			available  = {
+			}
+			traits  = {
+				navy_chief_reform_2
+			}
+			
+		}
+		
+		navy_leader={
+			traits={ navy_career_officer aviation_enthusiast caustic_personality blockade_runner superior_tactician }
+			skill=5
+			attack_skill=4
+			defense_skill=3
+			maneuvering_skill=3
+			coordination_skill=6
+		}
+		
+	}
+
+	SOE_rail_advisor = {
+		name = SOE_rail_advisor
+
+		portraits = {
+			civilian = {
+				small = "gfx/characters/SOE/portrait_nicky_mudkip.dds"
+			}		
+		}
+
+		advisor={
+			slot = political_advisor
+			idea_token = SOE_rail_advisor
+			
+			allowed  = {
+				original_tag  = SOE
+			}
+			
+			cost = 100
+			
+			available  = {
+				has_completed_focus = SOE_subsidized_rail
+			}
+			traits  = {
+				rail_enthusiast
+			}
+	
+		}
+	}
+}

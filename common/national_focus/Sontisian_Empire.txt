@@ -1,0 +1,3143 @@
+focus_tree = {
+	id = SOE_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 20
+			tag = SOE
+		}
+	}
+	
+	continuous_focus_position = { x = 55 y = 3500 }
+    initial_show_position = { focus = SOE_expedition_lost }
+	
+	#START OF FOCUS TREE
+	focus = {
+		id = SOE_expedition_lost
+		icon = GFX_focus_fra_devalue_the_franc
+		x = 25
+		y = 0
+		
+		cost = 5
+		prerequisite = {}
+		available = { 
+			date > 1936.2.2
+		}
+		
+		bypass = {
+
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ten_year_expedition_good
+				add_idea = ten_year_expedition_bad
+			}
+			
+			news_event = news.1
+		}
+	}
+	
+	focus = {
+		id = SOE_heavy_is_crown
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_expedition_lost
+		
+		prerequisite = { focus = SOE_expedition_lost }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	#TRAINING FOCUSES
+	focus = {
+		id = SOE_iron_fist
+		icon = GFX_focus_generic_industry_1
+		x = 2
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_heavy_is_crown
+		
+		prerequisite = { focus = SOE_heavy_is_crown }
+		mutually_exclusive = { focus = SOE_velvet_glove }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = SOE_velvet_glove
+		icon = GFX_goal_generic_construct_civilian
+		x = -2
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_heavy_is_crown
+		prerequisite = { focus = SOE_heavy_is_crown }
+		mutually_exclusive = { focus = SOE_iron_fist }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = SOE_what_mean_rule
+		icon = GFX_focus_generic_industry_1
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_iron_fist
+		
+		prerequisite = { focus = SOE_iron_fist }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			#add_idea = first_training_reward
+			#BOP
+			set_power_balance = {
+
+				id = SOE_power_balance
+
+				set_default = yes
+
+			}
+			set_country_flag = SOE_bop_made
+		}
+	}
+	
+	focus = {
+		id = SOE_what_makes_empress
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_velvet_glove
+		
+		prerequisite = { focus = SOE_velvet_glove }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			#add_idea = second_training_reward
+			#BOP
+			set_power_balance = {
+
+				id = SOE_power_balance
+
+				set_default = yes
+
+			}
+			set_country_flag = SOE_bop_made
+		}
+	}
+	
+	focus = {
+		id = SOE_the_bickering_council
+		icon = GFX_focus_generic_industry_1
+		x = 0
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_iron_fist
+		
+		prerequisite = { focus = SOE_what_mean_rule }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			#add_idea = first_training_reward
+		}
+	}
+	
+	focus = {
+		id = SOE_corralling_the_commoners
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_velvet_glove
+		
+		prerequisite = { focus = SOE_what_makes_empress }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			#add_idea = second_training_reward
+		}
+	}
+	
+	focus = {
+		id = SOE_taming_the_hinterlands
+		icon = GFX_focus_generic_industry_1
+		x = 0
+		y = 3
+		
+		cost = 5
+		relative_position_id = SOE_iron_fist
+		
+		prerequisite = { focus = SOE_the_bickering_council }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			#add_idea = first_training_reward
+		}
+	}
+	
+	focus = {
+		id = SOE_connecting_the_wilds
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 3
+		
+		cost = 5
+		relative_position_id = SOE_velvet_glove
+		
+		prerequisite = { focus = SOE_corralling_the_commoners }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			#add_idea = second_training_reward
+		}
+	}
+	
+	focus = {
+		id = SOE_fighting_for_crown
+		icon = GFX_focus_generic_industry_1
+		x = 0
+		y = 4
+		
+		cost = 5
+		relative_position_id = SOE_iron_fist
+		
+		prerequisite = { focus = SOE_taming_the_hinterlands }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			#add_idea = first_training_reward
+		}
+	}
+	
+	focus = {
+		id = SOE_defence_of_people
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 4
+		
+		cost = 5
+		relative_position_id = SOE_velvet_glove
+		
+		prerequisite = { focus = SOE_connecting_the_wilds }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			#add_idea = second_training_reward
+		}
+	}
+	
+	focus = {
+		id = SOE_heavier_the_empress
+		icon = GFX_goal_generic_construct_civilian
+		x = 2
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_defence_of_people
+		
+		prerequisite = { focus = SOE_defence_of_people focus = SOE_fighting_for_crown }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			#add_idea = second_training_reward
+		}
+	}
+	
+	#FIXING A BURNING NATION
+	focus = {
+		id = SOE_console_nation
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 6
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_heavy_is_crown
+		
+		prerequisite = { focus = SOE_heavy_is_crown }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_state_of_sontisia
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_console_nation
+		
+		prerequisite = { focus = SOE_console_nation }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_who_big_deal
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_console_nation
+		
+		prerequisite = { focus = SOE_console_nation }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_everyone_hate_us
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_console_nation
+		
+		prerequisite = { focus = SOE_console_nation }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_firesale_treasury
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_who_big_deal
+		
+		prerequisite = { focus = SOE_state_of_sontisia }
+		prerequisite = { focus = SOE_who_big_deal }
+		prerequisite = { focus = SOE_everyone_hate_us }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_barons_question
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_firesale_treasury
+		
+		prerequisite = { focus = SOE_firesale_treasury }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_nobles_question
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_firesale_treasury
+		
+		prerequisite = { focus = SOE_firesale_treasury }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_politicians_question
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_firesale_treasury
+		
+		prerequisite = { focus = SOE_firesale_treasury }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	#CORONATION FOCUSES
+	focus = {
+		id = SOE_coronation_prep
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 2
+		
+		cost = 20
+		relative_position_id = SOE_nobles_question 
+		
+		prerequisite = { focus = SOE_barons_question  }
+		prerequisite = { focus = SOE_nobles_question }
+		prerequisite = { focus = SOE_politicians_question }
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+			add_power_balance_value = { #test
+				id = SOE_power_balance
+				value = 0.10
+			}
+		}
+	}
+	
+	
+	focus = {
+		id = SOE_coronation_day
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -3
+		y = 2
+		
+		cost = 10
+		relative_position_id = SOE_coronation_prep
+		
+		prerequisite = { focus = SOE_coronation_prep }
+		prerequisite = { focus = SOE_heavier_the_empress }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			#country_event = SOE_coronation.1
+			news_event = { id = news.2 days = 15 random_days = 15 }
+		}
+	}
+	
+	#INTERNAL POLITICS
+	
+	focus = {
+		id = SOE_putting_out_fires
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_coronation_day
+		
+		prerequisite = { focus = SOE_coronation_day }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	#NEITHER!
+	
+	focus = {
+		id = SOE_neither
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 4
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_putting_out_fires
+		
+		prerequisite = { focus = SOE_putting_out_fires }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_cleaning_council
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_neither
+		
+		prerequisite = { focus = SOE_neither }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_legitimate_advisors
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_cleaning_council
+		
+		prerequisite = { focus = SOE_cleaning_council }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_hard_way
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_legitimate_advisors
+		
+		prerequisite = { focus = SOE_legitimate_advisors }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	#THE BORDERS
+	focus = {
+		id = SOE_the_borders
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -14
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_hard_way
+		
+		prerequisite = { focus = SOE_hard_way }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_autonomy_for_loyalty
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_borders
+		
+		prerequisite = { focus = SOE_the_borders }
+		mutually_exclusive = { focus = SOE_border_princes }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_well_be_back
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_autonomy_for_loyalty
+		
+		prerequisite = { focus = SOE_autonomy_for_loyalty }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_regulated_feudalism
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_well_be_back
+		
+		prerequisite = { focus = SOE_well_be_back }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_border_princes
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_borders
+		
+		prerequisite = { focus = SOE_the_borders }
+		mutually_exclusive = { focus = SOE_autonomy_for_loyalty }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_redrawing_map
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_border_princes
+		
+		prerequisite = { focus = SOE_border_princes }
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_federalist_principles
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_redrawing_map
+		
+		prerequisite = { focus = SOE_redrawing_map }
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	#THE MOUNTAINS
+	focus = {
+		id = SOE_the_mountains
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -8
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_hard_way
+		
+		prerequisite = { focus = SOE_hard_way }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_bring_civilization
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_mountains
+		
+		prerequisite = { focus = SOE_the_mountains }
+		mutually_exclusive = { focus = SOE_leave_tribes_alone }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_kickstart_urban_dev
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_bring_civilization
+		
+		prerequisite = { focus = SOE_bring_civilization }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_leave_tribes_alone
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_mountains
+		
+		prerequisite = { focus = SOE_the_mountains }
+		mutually_exclusive = { focus = SOE_bring_civilization }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_pokemon_safari
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_leave_tribes_alone
+		
+		prerequisite = { focus = SOE_leave_tribes_alone }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	#HOME IS WHERE THE HEART IS
+	focus = {
+		id = SOE_home_is_where_heart
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_hard_way
+		
+		prerequisite = { focus = SOE_hard_way }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_keep_friends_close
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_home_is_where_heart
+		
+		prerequisite = { focus = SOE_home_is_where_heart }
+		mutually_exclusive = { focus = SOE_but_enemies_closer }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_covering_up_smell
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_keep_friends_close
+		
+		prerequisite = { focus = SOE_keep_friends_close }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_head_honchkrow
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_covering_up_smell
+		
+		prerequisite = { focus = SOE_covering_up_smell }
+		mutually_exclusive = { focus = SOE_controlled_corruption}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_but_enemies_closer
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_home_is_where_heart
+		
+		prerequisite = { focus = SOE_home_is_where_heart }
+		mutually_exclusive = { focus = SOE_keep_friends_close }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_rooting_out_rot
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_but_enemies_closer
+		
+		prerequisite = { focus = SOE_but_enemies_closer }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_zero_tolerance
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_rooting_out_rot
+		
+		prerequisite = { focus = SOE_rooting_out_rot }
+		mutually_exclusive = { focus = SOE_controlled_corruption}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_controlled_corruption
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_rooting_out_rot
+		
+		prerequisite = { focus = SOE_rooting_out_rot focus = SOE_covering_up_smell }
+		
+		mutually_exclusive = { focus = SOE_head_honchkrow }
+		mutually_exclusive = { focus = SOE_zero_tolerance }
+		
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	#THE FIELDS
+	focus = {
+		id = SOE_the_fields
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 8
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_hard_way
+		
+		prerequisite = { focus = SOE_hard_way }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_collectivization
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_fields
+		
+		prerequisite = { focus = SOE_the_fields }
+		mutually_exclusive = { focus = SOE_encourage_cartels }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_bread_and_roses
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_collectivization
+		
+		prerequisite = { focus = SOE_collectivization }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_guilds_by_for_workers
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_bread_and_roses
+		
+		prerequisite = { focus = SOE_bread_and_roses }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_encourage_cartels
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_fields
+		
+		prerequisite = { focus = SOE_the_fields }
+		mutually_exclusive = { focus = SOE_collectivization }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_reap_rewards
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_encourage_cartels
+		
+		prerequisite = { focus = SOE_encourage_cartels }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_big_business
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_reap_rewards
+		
+		prerequisite = { focus = SOE_reap_rewards }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	#THE COASTS
+	focus = {
+		id = SOE_the_coasts
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 14
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_hard_way
+		
+		prerequisite = { focus = SOE_hard_way }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_foreign_trade
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_coasts
+		
+		prerequisite = { focus = SOE_the_coasts }
+		mutually_exclusive = { focus = SOE_domestic_welfare}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_friends_down_under
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_foreign_trade
+		
+		prerequisite = { focus = SOE_foreign_trade }
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_domestic_welfare
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_coasts
+		
+		prerequisite = { focus = SOE_the_coasts }
+		mutually_exclusive = { focus = SOE_foreign_trade }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_tariffs_and_taxes
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_domestic_welfare
+		
+		prerequisite = { focus = SOE_domestic_welfare }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_coast_to_coast
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_tariffs_and_taxes
+		
+		prerequisite = { focus = SOE_tariffs_and_taxes }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	#PLUTOCRATS AND BARONS
+	
+	focus = {
+		id = SOE_the_barons
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_putting_out_fires
+		
+		prerequisite = { focus = SOE_putting_out_fires }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_making_amends
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_barons
+		
+		prerequisite = { focus = SOE_the_barons }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_loosen_reins
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_making_amends
+		
+		prerequisite = { focus = SOE_making_amends }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_looking_the_other_way
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_making_amends
+		
+		prerequisite = { focus = SOE_making_amends }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_the_plutocrats
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_putting_out_fires
+		
+		prerequisite = { focus = SOE_putting_out_fires }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_tap_the_treasury
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_plutocrats
+		
+		prerequisite = { focus = SOE_the_plutocrats }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_exploitative_labor
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_tap_the_treasury
+		
+		prerequisite = { focus = SOE_tap_the_treasury }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_what_taxes
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_tap_the_treasury
+		
+		prerequisite = { focus = SOE_tap_the_treasury }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	focus = {
+		id = SOE_peace_at_a_cost
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -1
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_exploitative_labor
+		
+		prerequisite = { focus = SOE_looking_the_other_way }
+		prerequisite = { focus = SOE_loosen_reins }
+		prerequisite = { focus = SOE_exploitative_labor }
+		prerequisite = { focus = SOE_what_taxes }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		
+		}
+	}
+	
+	#ECONOMIC/INDUSTRY
+	focus = {
+		id = SOE_lost_time
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 8
+		y = 12
+		
+		cost = 5
+		#relative_position_id = SOE_lost_time
+		
+		prerequisite = { focus = SOE_coronation_day }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	
+	focus = {
+		id = SOE_toasters_radios
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_lost_time
+		
+		prerequisite = { focus = SOE_lost_time}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = toaster_and_radios
+				days = 70
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = SOE_contracts_contacts
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_lost_time
+		
+		prerequisite = { focus = SOE_lost_time}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			356 = {
+				add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+				}
+			} 
+			#NEW INDUSTRIAL CONCERN
+		}
+	}
+	
+	focus = {
+		id = SOE_schools_factories
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 4
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_lost_time
+		
+		prerequisite = { focus = SOE_lost_time}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_urban_development
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_schools_factories
+		
+		prerequisite = { focus = SOE_schools_factories }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+		
+			356 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+				
+			}
+			
+			378 = {		
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+				
+			}
+			
+			957 = {		
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+				
+			}
+			
+			525 = {		
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+				
+			}
+			
+			267 = {		
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+				
+			}
+			
+			879 = {		
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+				
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = SOE_kickstarting_steel
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_schools_factories 
+		
+		prerequisite = { focus = SOE_schools_factories }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+			
+			#add a rail between capital and port city, with some extra steel in the state in the middle of the two 
+			#add_resource = {
+			#	type = steel
+			#	amount = 8
+			#}
+		}
+	}
+	
+	focus = {
+		id = SOE_teatime_barons
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_kickstarting_steel
+		
+		prerequisite = { focus = SOE_kickstarting_steel }
+		mutually_exclusive = { focus = SOE_shutout_barons }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 4 }
+			add_offsite_building = { type = arms_factory level = 1 }
+			add_timed_idea = {
+				idea = SOE_tea_with_barons
+				days = 90
+			}
+			#add advisor
+		}
+	}
+	
+	focus = {
+		id = SOE_shutout_barons
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_kickstarting_steel
+		
+		prerequisite = { focus = SOE_kickstarting_steel }
+		mutually_exclusive = { focus = SOE_teatime_barons }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = SOE_shut_out_barons
+				days = 90
+			}
+		}
+	}
+	
+	focus = {
+		id = SOE_favor_for_favor
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_urban_development
+		
+		
+		prerequisite = { focus = SOE_urban_development }
+		prerequisite = { focus = SOE_teatime_barons }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = SOE_favor_for_favor_idea
+				days = 90
+			}
+		}
+	}
+	
+	focus = {
+		id = SOE_mass_electrification
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_toasters_radios
+		
+		prerequisite = { focus = SOE_toasters_radios}
+		prerequisite = { focus = SOE_contracts_contacts}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}	
+		}
+	}
+	
+	focus = {
+		id = SOE_connecting_north
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_toasters_radios
+		
+		prerequisite = { focus = SOE_toasters_radios}
+		prerequisite = { focus = SOE_contracts_contacts}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+			#dunno yet, probably a rail between capital and northern cities
+		}
+	}
+	
+	focus = {
+		id = SOE_connecting_south
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_contracts_contacts
+		
+		prerequisite = { focus = SOE_toasters_radios}
+		prerequisite = { focus = SOE_contracts_contacts}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+			#rail upgraded or added to connnect southern cities  build_railway
+		}
+	}
+	
+	focus = {
+		id = SOE_subsidized_rail
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_mass_electrification
+		
+		prerequisite = { focus = SOE_mass_electrification}
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+			#train advisor and industrial concern
+			add_timed_idea = {
+				idea = SOE_subsidized_rail
+				days = 270
+			}
+		}
+	}
+	
+	focus = {
+		id = SOE_pickaxes_mining
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_connecting_north
+		
+		prerequisite = { focus = SOE_connecting_north}
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_agricultrual_grants
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_connecting_south
+		
+		prerequisite = { focus = SOE_connecting_south}
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_sontisian_rail
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_pickaxes_mining
+		
+		prerequisite = { focus = SOE_subsidized_rail }
+		prerequisite = { focus = SOE_pickaxes_mining }
+		prerequisite = { focus = SOE_agricultrual_grants }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			#event First tran sontisian circuit
+			add_ideas = SOE_trans_sontisian_circuit
+		}
+	}
+	
+	focus = {
+		id = SOE_burgeoning_industry
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_shutout_barons
+		
+		prerequisite = { focus = SOE_favor_for_favor focus = SOE_shutout_barons  }
+		prerequisite = { focus = SOE_sontisian_rail  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	#ARMY
+	focus = {
+		id = SOE_royal_sontisian_army
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 26
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_coronation_day
+		
+		prerequisite = { focus = SOE_coronation_day  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_cracking_open_caches
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_royal_sontisian_army
+		
+		prerequisite = { focus = SOE_royal_sontisian_army  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_multifront_excercises
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_royal_sontisian_army
+		
+		prerequisite = { focus = SOE_royal_sontisian_army  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus	= {
+		id = SOE_cooperation_between_fronts
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 4
+		
+		cost = 5
+		relative_position_id = SOE_multifront_excercises
+		
+		prerequisite = { focus = SOE_multifront_excercises  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_ponyta_power
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_cracking_open_caches
+		
+		prerequisite = { focus = SOE_cracking_open_caches  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_tractors_to_tanks
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_cracking_open_caches
+		
+		prerequisite = { focus = SOE_cracking_open_caches  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	
+	focus = {
+		id = SOE_motorized_warfare
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -1
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_ponyta_power
+		
+		prerequisite = { focus = SOE_ponyta_power  }
+		prerequisite = { focus = SOE_tractors_to_tanks }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_modern_tank_designs
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -1
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_motorized_warfare
+		
+		prerequisite = { focus = SOE_motorized_warfare  }
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_cryptological_warfare
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_motorized_warfare
+		
+		prerequisite = { focus = SOE_motorized_warfare  }
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_new_rd_divisions
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_cryptological_warfare
+		
+		prerequisite = { focus = SOE_cryptological_warfare  }
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_modernizing_arsenal
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_royal_sontisian_army
+		
+		prerequisite = { focus = SOE_royal_sontisian_army  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_rifles_dynamite
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_modernizing_arsenal
+		
+		prerequisite = { focus = SOE_modernizing_arsenal }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_shovels_pokepuffs
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_modernizing_arsenal
+		
+		prerequisite = { focus = SOE_modernizing_arsenal  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_advancements_artillery
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_rifles_dynamite
+		
+		prerequisite = { focus = SOE_rifles_dynamite  }
+		prerequisite = { focus = SOE_shovels_pokepuffs }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_synthesized_pokerus
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_advancements_artillery
+		
+		prerequisite = { focus = SOE_advancements_artillery  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_new_officer_corp
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -1
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_advancements_artillery
+		
+		prerequisite = { focus = SOE_advancements_artillery }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_modernize_conscription
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_new_officer_corp
+		
+		prerequisite = { focus = SOE_new_officer_corp }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_mobile_warfare
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_new_rd_divisions
+		
+		prerequisite = { focus = SOE_new_rd_divisions}
+		prerequisite = { focus = SOE_modernize_conscription}
+		prerequisite = { focus = SOE_cooperation_between_fronts}
+		
+		mutually_exclusive = { focus = SOE_grand_battleplan }
+		mutually_exclusive = { focus = SOE_superior_firepower}
+		mutually_exclusive = { focus = SOE_mass_assault }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_superior_firepower
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_new_rd_divisions
+		
+		prerequisite = { focus = SOE_new_rd_divisions}
+		prerequisite = { focus = SOE_modernize_conscription}
+		prerequisite = { focus = SOE_cooperation_between_fronts}
+		
+		mutually_exclusive = { focus = SOE_grand_battleplan }
+		mutually_exclusive = { focus = SOE_mass_assault}
+		mutually_exclusive = { focus = SOE_mobile_warfare }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_grand_battleplan
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 4
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_new_rd_divisions
+		
+		prerequisite = { focus = SOE_new_rd_divisions}
+		prerequisite = { focus = SOE_modernize_conscription}
+		prerequisite = { focus = SOE_cooperation_between_fronts}
+		
+		mutually_exclusive = { focus = SOE_mass_assault }
+		mutually_exclusive = { focus = SOE_superior_firepower}
+		mutually_exclusive = { focus = SOE_mobile_warfare }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_mass_assault
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 6
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_new_rd_divisions
+		
+		prerequisite = { focus = SOE_new_rd_divisions}
+		prerequisite = { focus = SOE_modernize_conscription}
+		prerequisite = { focus = SOE_cooperation_between_fronts}
+		
+		mutually_exclusive = { focus = SOE_grand_battleplan }
+		mutually_exclusive = { focus = SOE_superior_firepower}
+		mutually_exclusive = { focus = SOE_mobile_warfare }
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	
+	#AIR FORCE
+	focus = {
+		id = SOE_the_royal_air_corps
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 36
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_coronation_day
+		
+		prerequisite = { focus = SOE_coronation_day  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_kickstart_aviation_industry
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -4
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_royal_air_corps
+		
+		prerequisite = { focus = SOE_the_royal_air_corps  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_airbases_and_antiair
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_kickstart_aviation_industry
+		
+		prerequisite = { focus = SOE_kickstart_aviation_industry  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_first_in_flight
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_royal_air_corps
+		
+		prerequisite = { focus = SOE_the_royal_air_corps  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_heavy_airframes
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_first_in_flight
+		
+		prerequisite = { focus = SOE_first_in_flight  }
+		prerequisite = { focus = SOE_unify_command  }
+		
+		mutually_exclusive = {focus = SOE_light_airframes}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_unify_command
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 4
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_the_royal_air_corps
+		
+		prerequisite = { focus = SOE_the_royal_air_corps  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_paratrooper_experimentation
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_unify_command
+		
+		prerequisite = { focus = SOE_unify_command  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_cooperation_fronts_af
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_paratrooper_experimentation
+		
+		prerequisite = { focus = SOE_paratrooper_experimentation }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_light_airframes
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_unify_command
+		
+		prerequisite = { focus = SOE_first_in_flight  }
+		prerequisite = { focus = SOE_unify_command  }
+		
+		mutually_exclusive = {focus = SOE_heavy_airframes}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_air_doctrine
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_heavy_airframes
+		
+		prerequisite = { focus = SOE_light_airframes focus = SOE_heavy_airframes  }
+		prerequisite = { focus = SOE_airbases_and_antiair }
+		
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_splitting_atom
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_air_doctrine
+		
+		prerequisite = { focus = SOE_air_doctrine }
+		
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_rockets_jets
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_air_doctrine
+		
+		prerequisite = { focus = SOE_air_doctrine }
+		
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	#NAVAL AVIATION
+	focus = {
+		id = SOE_naval_aviation
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 6
+		y = 0
+		
+		cost = 5
+		relative_position_id = SOE_unify_command
+		
+		prerequisite = { focus = SOE_unify_command  }
+		prerequisite = { focus = SOE_dabbling_drydocks  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_naval_aviation_experiments
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_naval_aviation
+		
+		prerequisite = { focus = SOE_naval_aviation }
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_torpedo_experiments
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_naval_aviation_experiments
+		
+		prerequisite = { focus = SOE_naval_aviation_experiments }
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	#NAVY
+	focus = {
+		id = SOE_royal_sontisian_navy
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 54
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_coronation_day
+		
+		prerequisite = { focus = SOE_coronation_day  }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_dabbling_drydocks
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_royal_sontisian_navy
+		
+		prerequisite = { focus = SOE_royal_sontisian_navy }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_guarding_shore
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_royal_sontisian_navy
+		
+		prerequisite = { focus = SOE_royal_sontisian_navy }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_call_up_reserves
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_guarding_shore
+		
+		prerequisite = { focus = SOE_guarding_shore }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_kickstarting_naval_lineage
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_dabbling_drydocks
+		
+		prerequisite = { focus = SOE_dabbling_drydocks}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_carrier_warfare
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -4
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_kickstarting_naval_lineage
+		
+		prerequisite = { focus = SOE_kickstarting_naval_lineage }
+		
+		mutually_exclusive = { focus = SOE_trade_interdiction}
+		mutually_exclusive = { focus = SOE_fleet_in_being}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_protecting_shores
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_carrier_warfare
+		
+		prerequisite = { focus = SOE_carrier_warfare }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_international_aspirations
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_carrier_warfare
+		
+		prerequisite = { focus = SOE_carrier_warfare }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_fleet_in_being
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_kickstarting_naval_lineage
+		
+		prerequisite = { focus = SOE_kickstarting_naval_lineage }
+		
+		mutually_exclusive = { focus = SOE_trade_interdiction}
+		mutually_exclusive = { focus = SOE_carrier_warfare}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_escorts
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_fleet_in_being
+		
+		prerequisite = { focus = SOE_fleet_in_being }
+		
+		mutually_exclusive = { focus = SOE_battleships}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_battleships
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_fleet_in_being
+		
+		prerequisite = { focus = SOE_fleet_in_being }
+		
+		mutually_exclusive = { focus = SOE_escorts}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_kiki_boat
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_escorts
+		
+		prerequisite = { focus = SOE_escorts focus = SOE_battleships }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_trade_interdiction
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 4
+		y = 2
+		
+		cost = 5
+		relative_position_id = SOE_kickstarting_naval_lineage
+		
+		prerequisite = { focus = SOE_kickstarting_naval_lineage }
+		
+		mutually_exclusive = { focus = SOE_fleet_in_being}
+		mutually_exclusive = { focus = SOE_carrier_warfare}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_under_sea
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_trade_interdiction
+		
+		prerequisite = { focus = SOE_trade_interdiction }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SOE_on_surface
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		
+		cost = 5
+		relative_position_id = SOE_trade_interdiction
+		
+		prerequisite = { focus = SOE_trade_interdiction }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+}

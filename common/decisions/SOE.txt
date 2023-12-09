@@ -1,0 +1,58 @@
+#BALANCE OF POWER
+
+SOE_balance_of_power_category = {
+
+	SOE_bop_tea_with_dignitaries = {
+
+		allowed = {
+			original_tag = SOE
+		}
+	
+		visible = {
+			has_country_flag = SOE_bop_made
+		}
+		
+		available = {
+			has_country_flag = SOE_bop_made
+		}
+		
+		days_re_enable = 50
+	
+		complete_effect = {
+			add_power_balance_value = {
+				id = SOE_power_balance
+				value = 0.10
+			}
+			
+			#add_power_balance_modifier use in an event later
+			
+			add_political_power = 25
+		}
+	}	
+	
+	SOE_tighten_the_belt = {
+
+		allowed = {
+			original_tag = SOE
+		}
+	
+		visible = {
+			has_country_flag = SOE_bop_made
+		}
+		
+		available = {
+			has_country_flag = SOE_bop_made
+		}
+		
+		days_re_enable = 50
+	
+		complete_effect = {
+			add_power_balance_value = {
+				id = SOE_power_balance
+				value = -0.10
+			}
+			
+			add_political_power = 25
+		}
+	}	
+}
